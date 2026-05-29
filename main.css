@@ -411,7 +411,7 @@ body {
   transform: scale(1.1);
 }
 
-/* Product cards */
+/* Product cards — исправленные расстояния между текстом */
 .tovar-card-group {
   padding: 0 100px;
   padding-top: 50px;
@@ -462,30 +462,33 @@ body {
 .scidka-tov {
   font-family: Roboto;
   font-size: 18px;
-  line-height: 34px;
+  line-height: 1.4;
   color: #ff3232;
   padding: 0 20px;
   font-weight: bold;
+  margin-bottom: 8px;
 }
 .text-car {
   display: flex;
   flex-direction: column;
-  padding-top: 20px;
-  line-height: 32px;
+  gap: 8px;
+  /* ПК-версия: большой отступ сверху */
+  padding-top: 120px;
 }
 .firm,
 .name,
 .size {
   padding: 0 20px;
-  line-height: 32px;
   font-size: 18px;
+  line-height: 1.4;
+  margin: 0;
 }
 .price {
   padding: 0 20px;
-  line-height: 32px;
   font-size: 26px;
-  padding-top: 20px;
   font-weight: bold;
+  line-height: 1.4;
+  margin-top: 8px;
 }
 
 /* Footer */
@@ -690,7 +693,7 @@ body {
   color: #ff9900;
 }
 
-/* АДАПТИВ */
+/* АДАПТИВ (с чётким разделением: на мобильных отступ сверху у .text-car — 20px) */
 @media (max-width: 768px) {
   .header {
     padding: 0 20px;
@@ -790,7 +793,6 @@ body {
     justify-content: space-between;
   }
 
-  /* Исправленные карточки категорий */
   .card-groups {
     padding: 0 15px;
     gap: 15px;
@@ -844,6 +846,10 @@ body {
   }
   .tovar-image {
     height: 140px;
+  }
+  /* Мобильная версия: отступ сверху у текстового блока — 20px (как было изначально на ПК до изменения) */
+  .text-car {
+    padding-top: 20px;
   }
   .price {
     font-size: 20px;
@@ -909,7 +915,6 @@ body {
     font-size: 14px;
   }
 
-  /* Карточки категорий для 480px */
   .category-card {
     width: calc(50% - 8px);
     border-radius: 20px;
@@ -942,6 +947,10 @@ body {
   .price {
     font-size: 16px;
     padding: 10px;
+  }
+  /* для узких экранов тоже оставляем маленький отступ */
+  .text-car {
+    padding-top: 20px;
   }
 
   .burger-nav li {
@@ -995,6 +1004,9 @@ body {
   }
   .price {
     font-size: 14px;
+  }
+  .text-car {
+    padding-top: 20px;
   }
 
   .footer p {
